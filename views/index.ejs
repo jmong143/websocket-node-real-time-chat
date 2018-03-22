@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/animate.min.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body style = "background-color:#181717;">
+    <div id="wrapper" style="width:100%; overflow:hidden;">
+      <div id="container" style="width:100%; margin-right:auto;">
+        <img style="width: 100%;" src="./images/starter.png" alt="starters.png"/>
+      </div>
+    </div>
+
+    <div class = "container">
+      <div class = "row">
+        <div style = "padding-top:50px;"></div>
+        <h1>Welcome to <%= desc %></h1>
+        <br/>
+          <div class="container">
+            <div class="row">
+              <div id = "joinRoomRegistry">
+                <div class = "col-md-4">
+                  <div class = "form-group">
+                    <h5>Enter Username</h5>
+                    <input class = "form-control" type = "text" placeholder="" id = "username"/>
+                  </div>
+                </div>
+                <div class = "col-md-4"></div>
+                <div class = "col-md-12">
+                  <div id = "rooms">
+                    <h3>Select Room</h3>
+                    <center><button class = "btn btn-primary" id = "btnJoinRoomKanto" data-room = "kantoRoom"><img src = "./images/region/kanto.jpg" class = "img-responsive" style = "width:100px; height:60px;">Kanto Region</button>
+                    <button class = "btn btn-warning" id = "btnJoinRoomOrange" data-room = "orangeRoom"><img src = "./images/region/orange.png" class = "img-responsive" style = "width:100px; height:60px;">Orange Island</button>
+                    <button class = "btn btn-success" id = "btnJoinRoomJohto" data-room = "johtoRoom"><img src = "./images/region/johto.jpg" class = "img-responsive" style = "width:100px; height:60px;">Johto Region</button>
+                    <button class = "btn btn-danger" id = "btnJoinRoomHoenn" data-room = "hoennRoom"><img src = "./images/region/hoenn.jpg" class = "img-responsive" style = "width:100px; height:60px;">Hoenn Region</button>
+                    <button class = "btn btn-default" id = "btnJoinRoomSinnoh" data-room = "sinnohRoom"><img src = "./images/region/sinnoh.jpg" class = "img-responsive" style = "width:100px; height:60px;">Sinnoh Region</button>
+                    <button class = "btn btn-success" id = "btnJoinRoomUnova" data-room = "unovaRoom"><img src = "./images/region/unova.jpg" class = "img-responsive" style = "width:100px; height:60px;">Unova Region</button>
+                    <button class = "btn btn-primary" id = "btnJoinRoomKalos" data-room = "kalosRoom"><img src = "./images/region/kalos.png" class = "img-responsive" style = "width:100px; height:60px;">Kalos Region</button>
+                    <button class = "btn btn-warning" id = "btnJoinRoomAlola" data-room = "alolaRoom"><img src = "./images/region/alola.png" class = "img-responsive" style = "width:100px; height:60px;">Alola Region</button></center>
+                  </div>
+                </div>
+              </div>
+
+            <div id = "roomConversation" class = "hidden">
+              <div class = "col-md-4 col-xs-4">
+                <div class = "form-group">
+                  <hr/>
+                  <h5>Message</h5>
+                  <textarea class = "form-control" id = "txtMessage" placeholder="Message Here"></textarea>
+                </div>
+                <button class = "btn btn-primary" id = "btnSendMessage">Send</button>
+                <button class = "btn btn-default">Clear</button>
+                <button class = "btn btn-danger" id = "btnLeaveGroup">Leave Group</button>
+                <br/>
+                <br/>
+                <div class = "well" style="overflow-x: hidden; overflow-y: scroll; height: 300px;">
+                  <h3>Send Sticker</h3>
+                  <hr/>
+                  <center>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/1.gif" id = "btnSendSticker"><img src = "./images/stickers/1.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/2.gif" id = "btnSendSticker"><img src = "./images/stickers/2.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/3.gif" id = "btnSendSticker"><img src = "./images/stickers/3.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/4.gif" id = "btnSendSticker"><img src = "./images/stickers/4.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/5.gif" id = "btnSendSticker"><img src = "./images/stickers/5.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/6.gif" id = "btnSendSticker"><img src = "./images/stickers/6.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/7.gif" id = "btnSendSticker"><img src = "./images/stickers/7.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/8.gif" id = "btnSendSticker"><img src = "./images/stickers/8.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/9.gif" id = "btnSendSticker"><img src = "./images/stickers/9.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/10.gif" id = "btnSendSticker"><img src = "./images/stickers/10.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/11.gif" id = "btnSendSticker"><img src = "./images/stickers/11.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/12.gif" id = "btnSendSticker"><img src = "./images/stickers/12.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/13.gif" id = "btnSendSticker"><img src = "./images/stickers/13.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/14.gif" id = "btnSendSticker"><img src = "./images/stickers/14.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/15.gif" id = "btnSendSticker"><img src = "./images/stickers/15.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/16.gif" id = "btnSendSticker"><img src = "./images/stickers/16.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/17.gif" id = "btnSendSticker"><img src = "./images/stickers/17.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/18.gif" id = "btnSendSticker"><img src = "./images/stickers/18.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/19.gif" id = "btnSendSticker"><img src = "./images/stickers/19.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/20.gif" id = "btnSendSticker"><img src = "./images/stickers/20.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/21.gif" id = "btnSendSticker"><img src = "./images/stickers/21.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/22.gif" id = "btnSendSticker"><img src = "./images/stickers/22.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/23.gif" id = "btnSendSticker"><img src = "./images/stickers/23.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/24.gif" id = "btnSendSticker"><img src = "./images/stickers/24.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  <br/><br/>
+                  <button class = "btn btn-primary" data-img-url = "./images/stickers/25.gif" id = "btnSendSticker"><img src = "./images/stickers/25.gif" class = "img-responsive" style = "height:100px; width:100px;"/></button>
+                  </center>
+                </div>
+              </div>
+
+              <div class="col-md-8 col-xs-8">
+                <div class="convoList" style = "overflow-x: hidden; overflow-y: scroll; height: 500px; background-color:#f6bd20;">
+
+                  <div class = "container">
+                    <div class="page-header">
+                      <h3><small class="pull-right">45 comments</small> Conversation in Room: <span id = "roomName">SAMPLE</span> </h3>
+                    </div>
+                    <div class="comments-list" id = "commentsLists">
+
+
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div style = "padding-top:100px;"></div>
+    <div class="footer-color" style ="background-color: #ba5706;">
+    	<div class="container">
+    		<br>
+        	<span style="float:left; color:white;"> Copyright 2016, John Michael Ong - NodeJS Project | Web Developer</span>
+        </div>
+         <div style="padding-bottom: 20px;"></div>
+    </div>
+    </body>
+</html>
+
+<script src  = "http://127.0.0.1:5100/socket.io/socket.io.js"></script>  
+<script src  = "/javascripts/jquery-1.10.2.min.js"></script>
+<script src  = "/javascripts/bootstrap.js"></script>
+<script src  = "/javascripts/jquery.noty.min.js"></script>
+<script src  = "/javascripts/scripts.js"></script>
+
+<script>
+  var socket = io.connect('http://127.0.0.1:5100');
+
+  (function(){
+
+    if(socket !== undefined){
+      console.log("connected in frontend");
+      socket.on('connection', function(data){
+          console.log(JSON.stringify(data));
+      });
+
+      socket.on('currentRoom', function(data){
+        if(data.room == "kantoRoom"){
+          $("#roomName").html("Kanto Region");
+        }else if(data.room == "orangeRoom"){
+          $("#roomName").html("Orange Island");
+        }else if(data.room == "johtoRoom"){
+          $("#roomName").html("Johto Region");
+        }else if(data.room == "hoennRoom"){
+          $("#roomName").html("Hoenn Region");
+        }else if(data.room == "sinnohRoom"){
+          $("#roomName").html("Sinnoh Region");
+        }else if(data.room == "unovaRoom"){
+          $("#roomName").html("Unova Region");
+        }else if(data.room == "kalosRoom"){
+          $("#roomName").html("Kalos Region");
+        }else if(data.room == "alolaRoom"){
+          $("#roomName").html("Alola Region");
+        }
+
+
+      });
+
+      socket.on('convoLists', function(data){
+        console.log("CONVO LIST DATA --> " + JSON.stringify(data));
+         $("#commentsLists").html('');
+         $.each(data, function (cons, list) {
+           var finalMessage = "";
+           if(list.message == null){
+             finalMessage = "<img src = "+ list.sticker +" class = 'img-responsive'/>";
+           }else if(list.sticker == null){
+             finalMessage = list.message;
+           }
+           $("#commentsLists").append(
+             '<div class="media">'+
+              '<a href="#" class="pull-left">'+
+                '<img src="./images/stickers/default-user.png" class="media-photo" style="height:70px;">'+
+              '</a>'+
+              '<div class="media-body">'+
+                '<span class="media-meta pull-right">'+ list.updatedAt +'</span>'+
+                '<h4 class="title">'+
+                    list.username +
+                //'<span class="pull-right pagado">(Pagado)</span>'+
+                '</h4>'+
+                '<p class="summary">'+ finalMessage +'</p>'+
+              '</div>'+
+            '</div>'
+           );
+         });
+      });
+
+      socket.on('latestConvo', function(data){
+        var finalMessage = "";
+        if(data.message == null){
+          finalMessage = "<img src = "+ data.sticker +" class = 'img-responsive'/>";
+        }else if(data.sticker == null){
+          finalMessage = data.message;
+        }
+        $("#commentsLists").prepend(
+          '<div class="media" style="background-color:#b99a01">'+
+						'<a href="#" class="pull-left">'+
+						  '<img src="./images/stickers/default-user.png" class="media-photo" style="height:70px;">'+
+						'</a>'+
+						'<div class="media-body">'+
+						  '<span class="media-meta pull-right">'+ data.updatedAt +'</span>'+
+							'<h4 class="title">'+
+    							data.username +
+							//'<span class="pull-right pagado">(Pagado)</span>'+
+							'</h4>'+
+							'<p class="summary">'+ finalMessage +'</p>'+
+						'</div>'+
+					'</div>'
+        );
+      });
+
+      socket.on('leaveRoomResult', function(data){
+        if(data.status == "success"){
+          $("#roomConversation").addClass("hidden");
+          $("#rooms").removeClass("hidden");
+        }
+      });
+
+
+    }
+  })();
+
+
+  $("#btnLeaveGroup").click(function(){
+    socket.emit('leaveRoom');
+    $("#username").removeAttr("disabled");
+  });
+
+  $("#btnSendMessage").click(function(){
+
+    var messageContent = $("#txtMessage").val(),
+        username = $("#username").val(),
+        formData = {username: username, message: messageContent, sticker: null};
+    socket.emit('newMessageProcess', formData)
+    // $("#username").val("");
+    notification('top', 'Message Successfully Sent!', 'success');
+  });
+  $(document).on('click', '#btnSendSticker', function(e){
+	   var imgURL = $(this).attr('data-img-url');
+     var messageContent = $("#txtMessage").val(),
+         username = $("#username").val(),
+         formData = {username: username, message: null, sticker: imgURL};
+     socket.emit('newMessageProcess', formData)
+     notification('top', 'Message Successfully Sent!', 'success');
+  });
+
+  $("#btnJoinRoomKanto").click(function(){
+    var username = $("#username");
+    if(username.val() == ""){
+      notification('center', 'Input Username First', 'error');
+    }else{
+      var room = $(this).attr('data-room');
+      socket.emit('joinRoom', {room: room});
+      socket.emit('getConvoList');
+      socket.emit('getCurrentRoom');
+      username.attr("disabled", "disabled");
+      $("#rooms").addClass("hidden");
+      $("#roomConversation").removeClass("hidden");
+    }
+      });
+  $("#btnJoinRoomOrange").click(function(){
+    var username = $("#username");
+    if(username.val() == ""){
+      notification('center', 'Input Username First', 'error');
+    }else{
+      var room = $(this).attr('data-room');
+      socket.emit('joinRoom', {room: room});
+      socket.emit('getConvoList');
+      socket.emit('getCurrentRoom');
+      username.attr("disabled", "disabled");
+      $("#rooms").addClass("hidden");
+      $("#roomConversation").removeClass("hidden");
+    }
+  });
+  $("#btnJoinRoomJohto").click(function(){
+    var username = $("#username");
+    if(username.val() == ""){
+      notification('center', 'Input Username First', 'error');
+    }else{
+      var room = $(this).attr('data-room');
+      socket.emit('joinRoom', {room: room});
+      socket.emit('getConvoList');
+      socket.emit('getCurrentRoom');
+      username.attr("disabled", "disabled");
+      $("#rooms").addClass("hidden");
+      $("#roomConversation").removeClass("hidden");
+    }
+  });
+  $("#btnJoinRoomHoenn").click(function(){
+    var username = $("#username");
+    if(username.val() == ""){
+      notification('center', 'Input Username First', 'error');
+    }else{
+      var room = $(this).attr('data-room');
+      socket.emit('joinRoom', {room: room});
+      socket.emit('getConvoList');
+      socket.emit('getCurrentRoom');
+      username.attr("disabled", "disabled");
+      $("#rooms").addClass("hidden");
+      $("#roomConversation").removeClass("hidden");
+    }
+  });
+  $("#btnJoinRoomSinnoh").click(function(){
+    var username = $("#username");
+    if(username.val() == ""){
+      notification('center', 'Input Username First', 'error');
+    }else{
+      var room = $(this).attr('data-room');
+      socket.emit('joinRoom', {room: room});
+      socket.emit('getConvoList');
+      socket.emit('getCurrentRoom');
+      username.attr("disabled", "disabled");
+      $("#rooms").addClass("hidden");
+      $("#roomConversation").removeClass("hidden");
+    }
+  });
+  $("#btnJoinRoomUnova").click(function(){
+    var username = $("#username");
+    if(username.val() == ""){
+      notification('center', 'Input Username First', 'error');
+    }else{
+      var room = $(this).attr('data-room');
+      socket.emit('joinRoom', {room: room});
+      socket.emit('getConvoList');
+      socket.emit('getCurrentRoom');
+      username.attr("disabled", "disabled");
+      $("#rooms").addClass("hidden");
+      $("#roomConversation").removeClass("hidden");
+    }
+  });
+  $("#btnJoinRoomKalos").click(function(){
+    var username = $("#username");
+    if(username.val() == ""){
+      notification('center', 'Input Username First', 'error');
+    }else{
+      var room = $(this).attr('data-room');
+      socket.emit('joinRoom', {room: room});
+      socket.emit('getConvoList');
+      socket.emit('getCurrentRoom');
+      username.attr("disabled", "disabled");
+      $("#rooms").addClass("hidden");
+      $("#roomConversation").removeClass("hidden");
+    }
+  });
+  $("#btnJoinRoomAlola").click(function(){
+    var username = $("#username");
+    if(username.val() == ""){
+      notification('center', 'Input Username First', 'error');
+    }else{
+      var room = $(this).attr('data-room');
+      socket.emit('joinRoom', {room: room});
+      socket.emit('getConvoList');
+      socket.emit('getCurrentRoom');
+      username.attr("disabled", "disabled");
+      $("#rooms").addClass("hidden");
+      $("#roomConversation").removeClass("hidden");
+    }
+  });
+</script>
